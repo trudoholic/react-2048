@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { Button } from "./components/Button";
+import { Game } from "./components/Game";
 
 function App() {
     const [date, setDate] = useState<Date>(new Date());
@@ -19,6 +20,10 @@ function App() {
                 <div>
                     <Button onClick={handleRestart}>Restart</Button>
                 </div>
+            </div>
+            <Game key={date.toISOString()} />
+            <div className="footer">
+                Made with React and TypeScript
             </div>
         </div>
     );
